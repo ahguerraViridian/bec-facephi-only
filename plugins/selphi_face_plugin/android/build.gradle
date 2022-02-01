@@ -1,0 +1,52 @@
+group 'com.selphi.flutter.plugin.facephi_plugin'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+//        mavenLocal()
+        google()
+        jcenter()
+        flatDir {
+            dirs 'src/main/libs'
+        }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.1'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+//        mavenLocal()
+        google()
+        jcenter()
+
+        flatDir {
+            dirs 'src/main/libs'
+        }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 17
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+
+dependencies {
+    implementation files('src/main/libs/fphi-core-widget-android.aar')
+    implementation files('src/main/libs/fphi-selphi-widget-android.aar')
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.percentlayout:percentlayout:1.0.0'
+}

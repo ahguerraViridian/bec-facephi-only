@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - selphid_plugin (1.0.0):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `.symlinks/flutter/ios`)
+  - selphid_plugin (from `.symlinks/plugins/selphid_plugin/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+  selphid_plugin:
+    :path: ".symlinks/plugins/selphid_plugin/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  selphid_plugin: db5d5a274c1d3a57c19b552267c642086c2e9a43
+
+PODFILE CHECKSUM: e9e6b2d1b4659eb7ca9c31439eb8716d7d418981
+
+COCOAPODS: 1.8.4

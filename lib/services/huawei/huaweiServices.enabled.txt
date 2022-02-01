@@ -1,0 +1,175 @@
+import 'dart:convert';
+
+import 'package:huawei_push/huawei_push.dart';
+
+import '../../utils/allUtils.dart';
+import '../../base/actions/allActions.dart';
+import '../../base/enums/allEnums.dart';
+import '../../base/state/allState.dart';
+import 'package:flutter/services.dart';
+import 'package:redux/redux.dart';
+
+import '../services.dart';
+
+class HuaweiService {
+  static final HuaweiService _singleton = new HuaweiService._internal();
+
+  factory HuaweiService() {
+    return _singleton;
+  }
+
+  HuaweiService._internal();
+
+  void init(Store<AppState> store) async {
+    DynamicLog.devPrint("HUAWEI ENABLED ");
+    store.dispatch(XStConfig(serviceCompanyEnabled: ServiceCompany.HUAWEI));
+
+    Push.getTokenStream.listen((String event) {
+      _onTokenEvent(event, store);
+    }, onError: (Object error) {
+      _onTokenError(error, store);
+    });
+    await Push.getToken("");
+    // Push.getIntentStream.listen(_onNewIntent, onError: _onIntentError);
+    Push.onNotificationOpenedApp.listen((dynamic value) {
+      _onNotificationResumedApp(value, store);
+    });
+    var initialNotification = await Push.getInitialNotification();
+    _onNotificationOpenedApp(initialNotification, store);
+    // String intent = await Push.getInitialIntent();
+    // _onNewIntent(intent);
+    Push.onMessageReceivedStream.listen((
+      RemoteMessage rm,
+    ) {
+      _onMessageReceived(rm, store);
+    }, onError: _onMessageReceiveError);
+    Push.getRemoteMsgSendStatusStream
+        .listen(_onRemoteMessageSendStatus, onError: _onRemoteMessageSendError);
+    bool backgroundMessageHandler =
+        await Push.registerBackgroundMessageHandler(backgroundMessageCallback);
+    print("backgroundMessageHandler registered: $backgroundMessageHandler");
+  }
+
+  String _token = '';
+
+  _onMessageReceived(RemoteMessage rm, Store<AppState> store) {
+    RemoteMessage remoteMessage = rm;
+    String dataString = remoteMessage.getData;
+    Map<String, String> dataMap = remoteMessage.getDataOfMap;
+    store.dispatch(
+        XFcm(notification: null, data: dataMap, fcmEvent: FCMEvent.ON_MESSAGE));
+    print("Data of the received message: " + dataMap.toString());
+  }
+
+  static void backgroundMessageCallback(RemoteMessage remoteMessage) async {
+    String data = remoteMessage.data;
+    Map<String, String> dataMap = remoteMessage.getDataOfMap;
+
+    dataMap.addAll({"fromBackground": "true"});
+    bool saveResult = await Services.prefManager
+        .setBoolResponse("newHuaweiNotification", true);
+    print(
+        "Data of the received BACKGROUND message Saved in shared preferences: $saveResult");
+    dynamic result = await Push.localNotification({
+      HMSLocalNotificationAttr.TITLE: '${dataMap["title"]}',
+      HMSLocalNotificationAttr.MESSAGE: '${dataMap["body"]}',
+      HMSLocalNotificationAttr.DATA: dataMap,
+    });
+
+    print("Data of the received BACKGROUND message: " + result.toString());
+  }
+
+  void _onRemoteMessageSendError(Object error) {
+    PlatformException e = error;
+    print("RemoteMessageSendError: " + e.toString());
+  }
+
+  _onMessageReceiveError(Object error) {
+    print("onRemoteMessageReceiveError: " + error.toString());
+  }
+
+  void _onTokenEvent(String event, Store<AppState> store) {
+    _token = event;
+    // showResult("TokenEvent", _token);
+    print("TokenEvent" + ": " + _token.toString());
+    store.dispatch(XStConfig(firebaseToken: event));
+  }
+
+  void _onTokenError(Object error, Store<AppState> store) {
+    PlatformException e = error;
+    print("TokenErrorEvent" + ": " + e.message);
+    store.dispatch(XUIPopUpMessage(
+        context: null, message: "Error con el token Huawei:\n\n${e.message}"));
+  }
+
+  // void _onNewIntent(String intentString) {
+  //   // For navigating to the custom intent page (deep link) the custom
+  //   // intent that sent from the push kit console is:
+  //   // app://app2
+  //   intentString = intentString ?? '';
+  //   if (intentString != '') {
+  //     showResult('CustomIntentEvent: ', intentString);
+  //     List parsedString = intentString.split("://");
+  //     if (parsedString[1] == "app2") {
+  //       SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+  //         Navigator.of(context).push(
+  //             MaterialPageRoute(builder: (context) => CustomIntentPage()));
+  //       });
+  //     }
+  //   }
+  // }
+  void _onRemoteMessageSendStatus(String event) {
+    print("[onNotificationOpenedApp]" + "\nStatus: " + event.toString());
+    // showResult("RemoteMessageSendStatus", "Status: " + event.toString());
+  }
+
+  void _onIntentError(Object err) {
+    PlatformException e = err;
+    print("Error on intent stream: " + e.toString());
+  }
+
+  void _onNotificationOpenedApp(
+      dynamic initialNotification, Store<AppState> store) async {
+    // showResult("onNotificationOpenedApp", initialNotification.toString());
+    if (initialNotification != null) {
+      if (initialNotification["extras"] !=
+          null) if (initialNotification["extras"]["notification"] != null) {
+        bool newNotification =
+            await Services.prefManager.getBool("newHuaweiNotification");
+        newNotification = newNotification == null ? true : newNotification;
+        if (newNotification) {
+          bool saveResult = await Services.prefManager
+              .setBoolResponse("newHuaweiNotification", false);
+          print(
+              "Data of the received BACKGROUND message Saved in shared preferences: $saveResult");
+          Map valueMap = json.decode(initialNotification["extras"]
+              ["notification"][HMSLocalNotificationAttr.DATA]);
+          store.dispatch(XFcm(
+              notification: null,
+              data: valueMap,
+              fcmEvent: FCMEvent.ON_RESUME));
+        }
+      }
+    }
+    print("[onNotificationOpenedApp]" + initialNotification.toString());
+  }
+
+  void _onNotificationResumedApp(
+      dynamic initialNotification, Store<AppState> store) async {
+    // showResult("onNotificationOpenedApp", initialNotification.toString());
+    if (initialNotification != null) {
+      if (initialNotification["extras"] !=
+          null) if (initialNotification["extras"]["notification"] != null) {
+        Map valueMap = json.decode(initialNotification["extras"]["notification"]
+            [HMSLocalNotificationAttr.DATA]);
+        store.dispatch(XFcm(
+            notification: null, data: valueMap, fcmEvent: FCMEvent.ON_RESUME));
+        bool saveResult = await Services.prefManager
+            .setBoolResponse("newHuaweiNotification", false);
+        print(
+            "Data of the received BACKGROUND message Saved in shared preferences: $saveResult");
+      }
+    }
+    print("[onNotificationOpenedApp]" + initialNotification.toString());
+  }
+}

@@ -1,0 +1,551 @@
+{
+  "project_info": {
+    "project_number": "565945086828",
+    "firebase_url": "https://banco-economico-app-c6b2b.firebaseio.com",
+    "project_id": "banco-economico-app-c6b2b",
+    "storage_bucket": "banco-economico-app-c6b2b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:d7729e63a819a1c1cdb949",
+        "android_client_info": {
+          "package_name": "com.baneco.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:00eb9f90a0474966cdb949",
+        "android_client_info": {
+          "package_name": "com.baneco.application.bot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:d39a0d677766d599cdb949",
+        "android_client_info": {
+          "package_name": "com.baneco.application.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:949e1d7012726eb0cdb949",
+        "android_client_info": {
+          "package_name": "com.baneco.application.master"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:418f564db33345b6cdb949",
+        "android_client_info": {
+          "package_name": "com.baneco.application.preprod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:3516fd0e90284d91cdb949",
+        "android_client_info": {
+          "package_name": "com.baneco.application.stage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:57f2ad2c1739a852cdb949",
+        "android_client_info": {
+          "package_name": "com.baneco.application.testing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:fbfe523a46660660cdb949",
+        "android_client_info": {
+          "package_name": "com.bankio.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:74b9a3c42cb61ec2cdb949",
+        "android_client_info": {
+          "package_name": "com.bankio.application.bot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:3ec465e8cf6a4914cdb949",
+        "android_client_info": {
+          "package_name": "com.bankio.application.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:8df293ef2e9bb994cdb949",
+        "android_client_info": {
+          "package_name": "com.bankio.application.master"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:5451ec8a07e9c425cdb949",
+        "android_client_info": {
+          "package_name": "com.bankio.application.testing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:cf1bb2e33f4de284cdb949",
+        "android_client_info": {
+          "package_name": "com.tubanco.application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:7eb2bbb1588b9a06cdb949",
+        "android_client_info": {
+          "package_name": "com.tubanco.application.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:565945086828:android:a685a1ac64f6e9afcdb949",
+        "android_client_info": {
+          "package_name": "com.tubanco.application.stage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDW4H7wY3BRxipT5kEtp7iKEdc-jPV5mY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "565945086828-k6l9a68tiuurhltdltsdh3mamfa4ht8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "565945086828-1kmf4t9tvpnu9fesh9m35liod0n655nk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.baneco.application.stage"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

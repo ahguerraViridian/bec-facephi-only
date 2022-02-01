@@ -1,0 +1,6 @@
+include ':selphid_plugin', ':fphiselphidwidgetcore', ':selphid', ':LibBlinkID'
+
+project(':selphid_plugin').projectDir = file('android')
+project(':fphiselphidwidgetcore').projectDir = file('android/fphiselphidwidgetcore')
+project(':selphid').projectDir = file('android/selphid')
+project(':LibBlinkID').projectDir = file('android/LibBlinkID')

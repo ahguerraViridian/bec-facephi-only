@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- You can name this style whatever you'd like -->
+    
+    <style name="LaunchTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar"> -->
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@drawable/launch_background</item>
+        <item name="colorPrimaryDark" parent="@android:color/red">#FF900e10</item>
+    </style>
+    <style name="NormalTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@drawable/normal_background</item>
+        <item name="colorPrimaryDark" parent="@android:color/red">#FF900e10</item>
+    </style>
+
+    <color name="notification_color" parent="@android:color/red">#FFED1C24</color>
+</resources>

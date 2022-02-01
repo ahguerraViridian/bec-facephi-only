@@ -1,0 +1,5 @@
+include ':selphi_face_plugin', ':fphi-core-widget-android', ':fphi-selphi-widget-android'
+
+project(':selphi_face_plugin').projectDir = file('android')
+project(':fphi-core-widget-android').projectDir = file('android/fphi-core-widget-android')
+project(':fphi-selphi-widget-android').projectDir = file('android/fphi-selphi-widget-android')

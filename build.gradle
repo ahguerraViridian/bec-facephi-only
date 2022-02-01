@@ -1,0 +1,106 @@
+/*
+task changeClientBaneco(type: Exec) {
+    println 'Changing to client: baneco, environment: dev'
+
+    def proc = "cp -v clients/baneco/src/main/res/web_hi_res_512.png android/app/src/dev/web_hi_res_512.png".execute()
+    proc.waitForProcessOutput(System.out, System.err)
+
+    proc = "cp -rv clients/baneco/src/main/res android/app/src/dev/".execute()
+    proc.waitForProcessOutput(System.out, System.err)
+
+}
+
+task changeClientBankio(type: Exec) {
+    println 'Changing to client: bankio, environment: dev'
+
+    def proc = "cp -v clients/bankio/src/main/res/web_hi_res_512.png android/app/src/dev/web_hi_res_512.png".execute()
+    proc.waitForProcessOutput(System.out, System.err)
+
+    proc = "cp -rv clients/bankio/src/main/res android/app/src/dev/".execute()
+    proc.waitForProcessOutput(System.out, System.err)
+
+}
+*/
+
+task changeClient(type: Exec) {
+    doFirst {
+        println " * change project to:"
+        println "    client :" + client
+        println "    environment: " + env
+        println "    msg service: " + msg_service
+        println "    os: " + os
+        println ""
+
+        def cmds = [
+            "rm -rf android/app/src",
+            "cp -rv clients/" + client + "/android/src android/app",
+            "cp -rv clients/" + client + "/clientConfig.dart.txt lib/clientConfig.dart",
+            "cp -rv clients/" + client + "/android/build.gradle android/app/build.gradle",
+            "cp -rv clients/" + client + "/android/build.s7.gradle android/app/build.s7.gradle",
+            "cp -rv clients/" + client + "/android/key.properties android/key.properties",
+            "cp -rv clients/" + client + "/android/key.s7.properties android/key.s7.properties",
+            "cp -rv clients/" + client + "/android/project_build.gradle android/build.gradle",
+            "cp -rv clients/" + client + "/android/settings.gradle android/settings.gradle",
+            "cp -rv clients/" + client + "/android/vumodule android",
+            "cp -rv clients/" + client + "/" + os + "_pubspec.yaml pubspec.yaml",
+            "cp -rv clients/" + client + "/" + os + "_pubspec.yaml pubspec.jenkins.yaml",
+            "cp -rv clients/" + client + "/android/google-services.json android/app/google-services.json",
+            "cp -rv lib/services/firebase/firebaseManager.enabled.txt lib/services/firebase/firebaseManager.dart",
+            "cp -rv lib/services/firebase/firebaseRealtimeDB.enabled.txt lib/services/firebase/firebaseRealtimeDB.dart",
+            "cp -rv lib/services/huawei/huaweiServices.disabled.txt lib/services/huawei/huaweiServices.dart",
+            "cp -rv lib/services/imageScan/imageScan." + os + ".txt lib/services/imageScan/imageScan.dart",
+            "cp -rv lib/services/locationInfo/locationInfo.google.text lib/services/locationInfo/locationInfo.dart",
+            "cp -rv lib/components/maps/mainMapWidget.google.txt lib/components/maps/mainMapWidget.dart",
+            "cp -rv lib/utils/dataHandlers/mapDataHandler.google.txt lib/utils/dataHandlers/mapDataHandler.dart",
+            "cp -rv lib/services/flourish/flourishService_disabled.txt lib/services/flourish/flourishService.dart",
+        ]
+
+        cmds.each {
+            println "\n${it}"
+            def proc = it.execute()
+            proc.waitForProcessOutput(System.out, System.err)
+        }
+
+        if (msg_service == "huawei") {
+            def huawei_cmds = [
+            "cp -rv clients/" + client + "/android/HUAWEI_build.gradle android/app/build.gradle",
+            "cp -rv clients/" + client + "/android/HUAWEI_build.s7.gradle android/app/build.s7.gradle",
+            "cp -rv clients/" + client + "/android/HUAWEI_project_build.gradle android/build.gradle",
+            "cp -rv clients/" + client + "/android/HUAWEI_AndroidManifest.xml android/app/src/main/AndroidManifest.xml",
+            "cp -rv clients/" + client + "/HUAWEI_pubspec.yaml pubspec.jenkins.yaml",
+            "cp -rv clients/" + client + "/HUAWEI_pubspec.yaml pubspec.yaml",
+            "cp -rv clients/" + client + "/android/agconnect-services.json android/app/agconnect-services.json",
+            "cp -rv clients/" + client + "/android/proguard-rules.pro android/app/proguard-rules.pro",
+            "cp -rv lib/services/firebase/firebaseManager.disabled.txt lib/services/firebase/firebaseManager.dart",
+            "cp -rv lib/services/huawei/huaweiServices.enabled.txt lib/services/huawei/huaweiServices.dart",
+            "cp -rv lib/services/imageScan/imageScan.huawei.txt lib/services/imageScan/imageScan.dart",
+            "cp -rv lib/services/locationInfo/locationInfo.huawei.text lib/services/locationInfo/locationInfo.dart",
+            "cp -rv lib/components/maps/mainMapWidget.huawei.txt lib/components/maps/mainMapWidget.dart",
+            "cp -rv lib/utils/dataHandlers/mapDataHandler.huawei.txt lib/utils/dataHandlers/mapDataHandler.dart",
+        ]
+        huawei_cmds.each {
+            println "\n${it}"
+            def proc_huawei = it.execute()
+            proc_huawei.waitForProcessOutput(System.out, System.err)
+        }
+            
+        }
+
+        if (client == "bsol"){
+           def bsol_cmds = [
+            "cp -rv lib/services/flourish/flourishService_enabled.txt lib/services/flourish/flourishService.dart",
+            ] 
+            bsol_cmds.each {
+            println "\n${it}"
+            def proc_bsol = it.execute()
+            proc_bsol.waitForProcessOutput(System.out, System.err)
+        }
+        }
+        
+        
+
+        executable "sh" args "-c", "echo 'EXECUTED SUCCESSFUL'"
+    }
+}
+
+

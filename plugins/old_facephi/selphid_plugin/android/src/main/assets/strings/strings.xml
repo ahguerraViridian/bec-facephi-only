@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <token id="button_repeat">CAPTURE AGAIN</token>
+    <token id="button_finish">ACCEPT</token>
+    <token id="button_skip">SKIP</token>
+    <token id="button_ready">READY</token>
+    <token id="CaptureTipFront">Please capture&#10;document's front</token>
+    <token id="CaptureInfoFront">Please capture&#10;document's front</token>
+    <token id="CaptureTipFrontIDCard">Please capture&#10;document's front</token>
+    <token id="CaptureInfoFrontIDCard">Please capture&#10;document's front</token>
+    <token id="CaptureTipFrontPassport">Please capture&#10;passport's front</token>
+    <token id="CaptureInfoFrontPassport">Please capture&#10;passport's front</token>
+    <token id="CaptureTipFrontDriversLicense">Please capture&#10;driver licence's front</token>
+    <token id="CaptureInfoFrontDriversLicense">Please capture&#10;driver licence's front</token>
+    <token id="CaptureTipBack">Please capture&#10;document's back</token>
+    <token id="CaptureInfoBack">Please capture&#10;document's back</token>
+    <token id="CaptureTipBackIDCard">Please capture&#10;document's back</token>
+    <token id="CaptureInfoBackIDCard">Please capture&#10;document's back</token>
+    <token id="CaptureTipBackPassport">Please capture&#10;passport's back</token>
+    <token id="CaptureInfoBackPassport">Please capture&#10;passport's back</token>
+    <token id="CaptureTipBackDriversLicense">Please capture&#10;driver license's back</token>
+    <token id="CaptureInfoBackDriversLicense">Please capture&#10;driver license's back</token>
+    <token id="CaptureSuccessFront">Document scanned&#10;successfully!</token>
+    <token id="CaptureSuccessBack">Document scanned&#10;successfully!</token>
+    <token id="CaptureError">Processing document...</token>
+    <token id="CaptureErrorLight">There is not&#10;enough light</token>
+    <token id="Tutorial1">Find a background&#10;with high contrast to&#10;capture the document</token>
+    <token id="Tutorial2">Be sure the images&#10;and text of the document&#10;are properly focused</token>
+    <token id="Tutorial3">Avoid any glare on&#10;the document to better&#10;capture the information</token>
+</translations>

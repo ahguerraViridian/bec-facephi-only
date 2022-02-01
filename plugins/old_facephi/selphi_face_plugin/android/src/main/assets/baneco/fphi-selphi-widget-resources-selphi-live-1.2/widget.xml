@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<facephi-widget-conf version="1.2"
+    color_warning_message="#ED1C24"
+    font_warning_message="Raleway-Bold.ttf"
+    color_shutter="#00819880"
+    color_shutter_text="#FFFFFF"
+    font_shutter_text="Raleway-Bold.ttf"
+    color_quality_low="#ED1C24"
+    color_quality_good="#ffab41"
+    color_quality_excellent="#40b305"
+    color_progress_bar="#0d9bbb"
+    width_progress_bar="6.0">
+    
+
+    <view id="StartExtractor">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        mirror_mist_color="#FFFFFF80"
+        />
+        
+        <text id="text"
+        color="#939298"
+        font="Raleway-Bold.ttf"
+        font_size="17.0"
+        />
+        
+        <camera id="camera" />
+        
+        <button id="button_start"
+        background="#e9e9e9"
+        decorator="#d3d3d3"
+        foreground="#757575"
+        content="button_start"
+        content_type="TEXT_ID"
+        font="Raleway-ExtraBold.ttf"
+        font_size="14.0"
+        align="CENTER"
+        />
+        
+        <buttonImage id="button_info" value="info-dark.png"/>
+        
+        <buttonImage id="button_exit" value="cross-dark.png"/>
+        
+        <image id="logo_medium" value="logo-medium.png"/>
+    </view>
+
+    <view id="Extractor">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        />
+        
+        <camera id="camera" />
+        
+        <video id="extraction_video" mode="Normal"
+        value="tipsregistro.mp4"
+        />
+        
+        <text id="text" mode="Normal"
+        color="#939298"
+        font="Raleway-Bold.ttf"
+        font_size="17.0"
+        />
+        
+        <text id="warning" mode="Warning"
+        color="#ED1C24"
+        font="Raleway-Bold.ttf"
+        font_size="17.0"
+        />
+        
+        <buttonImage id="button_exit" value="cross-dark.png"/>
+        
+        <image id="logo_medium" value="logo-medium.png"/>
+    </view>
+
+    <view id="LivenessMove">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        />
+        
+        <camera id="camera" />
+        
+        <animation id="liveness_move" name="ArrowProgressExpulsion_" ext="png" start="01" end="36"/>
+        <waiting id="waiting" color="#939298"/>
+        
+        <text id="liveness_move_text" mode="Normal"
+        color="#ED1C24"
+        font="Raleway-Bold.ttf"
+        font_size="17.0"
+        />
+        
+        <text id="warning" mode="Warning"
+        color="#ED1C24"
+        font="Raleway-Bold.ttf"
+        font_size="17.0"
+        />
+        
+        <buttonImage id="button_exit" value="cross-dark.png"/>
+        
+        <image id="logo_medium" value="logo-medium.png"/>
+    </view>
+
+    <view id="ScanQR">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        />
+        
+        <camera id="camera" />
+        
+        <text id="text" mode="Normal"
+        color="#939298"
+        font="Raleway-Bold.ttf"
+        font_size="17.0"
+        />
+        
+        <text id="warning" mode="Warning"
+        color="#ED1C24"
+        font="Raleway-Bold.ttf"
+        font_size="17.0"
+        />
+        
+        <fade id="qr_fade" target_color="#FFFFFF"/>
+        
+        <buttonImage id="button_exit" value="cross-dark.png"/>
+        
+        <image id="logo_medium" value="logo-medium.png"/>
+    </view>
+
+    <view id="Results">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        />
+        
+        <text id="tip"
+        color="#ED1C24"
+        font="Raleway-Bold.ttf"
+        font_size="17.0"
+        />
+        
+        <results id="results"
+        background_color="#f9f9f9"
+        fontResult="Raleway-Bold.ttf"
+        fontResult_size="30.0"
+        fontQuality="Raleway-ExtraBold.ttf"
+        fontQuality_size="17.0"
+        />
+        
+        <button id="button_repeat"
+        background="#f5f5f5"
+        decorator="#dcdcdc"
+        foreground="#757575"
+        content="button_repeat"
+        content_type="TEXT_ID"
+        font="Raleway-ExtraBold.ttf"
+        font_size="14.0"
+        align="CENTER"
+        />
+        
+        <button id="button_finish"
+        background="#e9e9e9"
+        decorator="#d3d3d3"
+        foreground="#757575"
+        content="button_finish"
+        content_type="TEXT_ID"
+        font="Raleway-ExtraBold.ttf"
+        font_size="14.0"
+        align="CENTER"
+        />
+        
+        <image id="logo_medium" value="logo-medium.png"/>
+    </view>
+
+    <view id="Success">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        />
+        
+        <video id="video_success" value="checkExitoSobreGris.mp4"/>
+        
+        <image id="logo_large" value="logo-large.png"/>
+    </view>
+
+<!-- ############### TUTORIALS ############### -->
+
+    <view id="TutorialRegister1">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        pagination_separator="#d2d2d2"
+        mirror_border_color="#d2d2d2"
+        mirror_border_width="2.0"
+        />
+        
+        <video id="tip_video" value="tipsluz.mp4"/>
+        
+        <text id="tip"
+        color="#7f7f7f"
+        font="Raleway-ExtraBold.ttf"
+        font_size="27.0"
+        />
+        
+        <text id="tip_detail"
+        color="#7f7f7f"
+        font="Raleway-Regular.ttf"
+        font_size="17.0"
+        />
+        
+        <button id="button_skip"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="button_skip"
+        content_type="TEXT_ID"
+        font="Raleway-ExtraBold.ttf"
+        font_size="14.0"
+        align="LEFT"
+        />
+        
+        <button id="button_next"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="arrow-next-dark.png"
+        content_type="RESOURCE_ID"
+        align="RIGHT"
+        />
+        
+        <buttonImage id="button_exit" value="cross-dark.png"/>
+        
+        <pagination id="pagination" steps="2"
+        page="1"
+        image_on="paged-on-dark.png"
+        image_off="paged-off-dark.png"
+        separation="16.0"
+        />
+    </view>
+
+    <view id="TutorialRegister2">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        pagination_separator="#d2d2d2"
+        mirror_border_color="#d2d2d2"
+        mirror_border_width="2.0"
+        />
+        
+        <video id="tip_video" value="tipsregistro.mp4"/>
+        
+        <text id="tip"
+        color="#7f7f7f"
+        font="Raleway-ExtraBold.ttf"
+        font_size="27.0"
+        />
+        
+        <text id="tip_detail"
+        color="#7f7f7f"
+        font="Raleway-Regular.ttf"
+        font_size="17.0"
+        />
+        
+        <button id="button_back"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="arrow-back-dark.png"
+        content_type="RESOURCE_ID"
+        align="LEFT"
+        />
+        
+        <button id="button_done"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="button_ready"
+        content_type="TEXT_ID"
+        font="Raleway-ExtraBold.ttf"
+        font_size="14.0"
+        align="RIGHT"
+        />
+        
+        <buttonImage id="button_exit" value="cross-dark.png"/>
+        
+        <pagination id="pagination" steps="2"
+        page="2"
+        image_on="paged-on-dark.png"
+        image_off="paged-off-dark.png"
+        separation="16.0"
+        />
+    </view>
+
+    <view id="TutorialBlink1">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        pagination_separator="#d2d2d2"
+        mirror_border_color="#d2d2d2"
+        mirror_border_width="2.0"
+        />
+        
+        <video id="tip_video" value="tutorial1.mp4"/>
+        
+        <text id="tip"
+        color="#7f7f7f"
+        font="Raleway-ExtraBold.ttf"
+        font_size="27.0"
+        />
+        
+        <text id="tip_detail"
+        color="#7f7f7f"
+        font="Raleway-Regular.ttf"
+        font_size="17.0"
+        />
+        
+        <button id="button_skip"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="button_skip"
+        content_type="TEXT_ID"
+        font="Raleway-ExtraBold.ttf"
+        font_size="14.0"
+        align="LEFT"
+        />
+        
+        <button id="button_next"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="arrow-next-dark.png"
+        content_type="RESOURCE_ID"
+        align="RIGHT"
+        />
+        
+        <buttonImage id="button_exit" value="cross-dark.png"/>
+        
+        <pagination id="pagination" steps="3"
+        page="1"
+        image_on="paged-on-dark.png"
+        image_off="paged-off-dark.png"
+        separation="16.0"
+        />
+    </view>
+
+    <view id="TutorialBlink2">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        pagination_separator="#d2d2d2"
+        mirror_border_color="#d2d2d2"
+        mirror_border_width="2.0"
+        />
+        
+        <video id="tip_video" value="tutorial2.mp4"/>
+        
+        <text id="tip"
+        color="#7f7f7f"
+        font="Raleway-ExtraBold.ttf"
+        font_size="27.0"
+        />
+        
+        <text id="tip_detail"
+        color="#7f7f7f"
+        font="Raleway-Regular.ttf"
+        font_size="17.0"
+        />
+        
+        <button id="button_back"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="arrow-back-dark.png"
+        content_type="RESOURCE_ID"
+        align="LEFT"
+        />
+        
+        <button id="button_next"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="arrow-next-dark.png"
+        content_type="RESOURCE_ID"
+        align="RIGHT"
+        />
+        
+        <buttonImage id="button_exit" value="cross-dark.png"/>
+        
+        <pagination id="pagination" steps="3"
+        page="2"
+        image_on="paged-on-dark.png"
+        image_off="paged-off-dark.png"
+        separation="16.0"
+        />
+    </view>
+
+    <view id="TutorialBlink3">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        pagination_separator="#d2d2d2"
+        mirror_border_color="#d2d2d2"
+        mirror_border_width="2.0"
+        />
+        
+        <video id="tip_video" value="tutorial3.mp4"/>
+        
+        <text id="tip"
+        color="#7f7f7f"
+        font="Raleway-ExtraBold.ttf"
+        font_size="27.0"
+        />
+        
+        <text id="tip_detail"
+        color="#7f7f7f"
+        font="Raleway-Regular.ttf"
+        font_size="17.0"
+        />
+        
+        <button id="button_back"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="arrow-back-dark.png"
+        content_type="RESOURCE_ID"
+        align="LEFT"
+        />
+        
+        <button id="button_done"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="button_ready"
+        content_type="TEXT_ID"
+        font="Raleway-ExtraBold.ttf"
+        font_size="14.0"
+        align="RIGHT"
+        />
+        
+        <buttonImage id="button_exit" value="cross-dark.png"/>
+        
+        <pagination id="pagination" steps="3"
+        page="3"
+        image_on="paged-on-dark.png"
+        image_off="paged-off-dark.png"
+        separation="16.0"
+        />
+    </view>
+
+    <view id="TutorialMove1">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        pagination_separator="#d2d2d2"
+        mirror_border_color="#d2d2d2"
+        mirror_border_width="2.0"
+        />
+        
+        <video id="tip_video" value="tipsluz.mp4"/>
+        
+        <text id="tip"
+        color="#7f7f7f"
+        font="Raleway-ExtraBold.ttf"
+        font_size="27.0"
+        />
+        
+        <text id="tip_detail"
+        color="#7f7f7f"
+        font="Raleway-Regular.ttf"
+        font_size="17.0"
+        />
+        
+        <button id="button_skip"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="button_skip"
+        content_type="TEXT_ID"
+        font="Raleway-ExtraBold.ttf"
+        font_size="14.0"
+        align="LEFT"
+        />
+        
+        <button id="button_next"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="arrow-next-dark.png"
+        content_type="RESOURCE_ID"
+        align="RIGHT"
+        />
+        
+        <buttonImage id="button_exit" value="cross-dark.png"/>
+        
+        <pagination id="pagination" steps="3"
+        page="1"
+        image_on="paged-on-dark.png"
+        image_off="paged-off-dark.png"
+        separation="16.0"
+        />
+    </view>
+
+    <view id="TutorialMove2">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        pagination_separator="#d2d2d2"
+        mirror_border_color="#d2d2d2"
+        mirror_border_width="2.0"
+        />
+        
+        <video id="tip_video" value="tutorial2.mp4"/>
+        
+        <text id="tip"
+        color="#7f7f7f"
+        font="Raleway-ExtraBold.ttf"
+        font_size="27.0"
+        />
+        
+        <text id="tip_detail"
+        color="#7f7f7f"
+        font="Raleway-Regular.ttf"
+        font_size="17.0"
+        />
+        
+        <button id="button_back"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="arrow-back-dark.png"
+        content_type="RESOURCE_ID"
+        align="LEFT"
+        />
+        
+        <button id="button_next"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="arrow-next-dark.png"
+        content_type="RESOURCE_ID"
+        align="RIGHT"
+        />
+        
+        <buttonImage id="button_exit" value="cross-dark.png"/>
+        
+        <pagination id="pagination" steps="3"
+        page="2"
+        image_on="paged-on-dark.png"
+        image_off="paged-off-dark.png"
+        separation="16.0"
+        />
+    </view>
+
+    <view id="TutorialMove3">
+        <background id="background"
+        top="#FFFFFF"
+        middle_top="#FFFFFF"
+        middle_bottom="#FFFFFF"
+        bottom="#FFFFFF"
+        pagination_separator="#d2d2d2"
+        mirror_border_color="#d2d2d2"
+        mirror_border_width="2.0"
+        />
+        
+        <video id="tip_video" value="liveness_move_left.mp4,liveness_move_right.mp4"/>
+        
+        <text id="tip"
+        color="#7f7f7f"
+        font="Raleway-ExtraBold.ttf"
+        font_size="27.0"
+        />
+        
+        <text id="tip_detail"
+        color="#7f7f7f"
+        font="Raleway-Regular.ttf"
+        font_size="17.0"
+        />
+        
+        <button id="button_back"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="arrow-back-dark.png"
+        content_type="RESOURCE_ID"
+        align="LEFT"
+        />
+        
+        <button id="button_done"
+        background="#FFFFFF"
+        decorator="#FFFFFF"
+        foreground="#7f7f7f"
+        content="button_ready"
+        content_type="TEXT_ID"
+        font="Raleway-ExtraBold.ttf"
+        font_size="14.0"
+        align="RIGHT"
+        />
+        
+        <buttonImage id="button_exit" value="cross-dark.png"/>
+        
+        <pagination id="pagination" steps="3"
+        page="3"
+        image_on="paged-on-dark.png"
+        image_off="paged-off-dark.png"
+        separation="16.0"
+        />
+    </view>
+
+</facephi-widget-conf>
+

@@ -1,0 +1,58 @@
+group 'com.selphid.flutter.plugin.selphid_plugin'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+//        mavenLocal()
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.4'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+//        mavenLocal()
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 17
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+/*apply plugin: 'maven-publish'
+publishing {
+    publications {
+        library(MavenPublication) {
+            version "1.1"
+            artifact(bundleRelease)
+        }
+    }
+} */
+
+dependencies {
+    implementation fileTree(include: ['*.aar'], dir: 'src/main/libs')
+    implementation 'com.android.support:design:29.0.2'
+    implementation 'com.android.support:appcompat-v7:29.0.2'
+    implementation 'com.android.support:percent:29.0.2'
+    implementation 'com.google.android.gms:play-services-mlkit-text-recognition:16.1.3'
+}

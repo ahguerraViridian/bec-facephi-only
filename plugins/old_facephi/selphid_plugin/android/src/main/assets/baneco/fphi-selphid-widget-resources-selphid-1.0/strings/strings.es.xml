@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <token id="button_repeat">TOMAR DE NUEVO</token>
+    <token id="button_finish">ACEPTAR</token>
+    <token id="button_skip">OMITIR</token>
+    <token id="button_ready">LISTO</token>
+    <token id="CaptureTipFront">Coloca tu carnet&#10;de identidad (ANVERSO)</token>
+    <token id="CaptureInfoFront">Coloca tu carnet&#10;de identidad (ANVERSO)</token>
+    <token id="CaptureTipFrontIDCard">Coloca tu carnet&#10;de identidad (ANVERSO)</token>
+    <token id="CaptureInfoFrontIDCard">Coloca tu carnet&#10;de identidad (ANVERSO)</token>
+    <token id="CaptureTipFrontPassport">Pon el FRENTE&#10;del pasaporte</token>
+    <token id="CaptureInfoFrontPassport">Pon el FRENTE&#10;del pasaporte</token>
+    <token id="CaptureTipFrontDriversLicense">Pon el FRENTE&#10;del carnet de conducir</token>
+    <token id="CaptureInfoFrontDriversLicense">Pon el FRENTE&#10;del carnet de conducir</token>
+    <token id="CaptureTipBack">Coloca tu carnet&#10;de identidad (REVERSO)</token>
+    <token id="CaptureInfoBack">Coloca tu carnet&#10;de identidad (REVERSO)</token>
+    <token id="CaptureTipBackIDCard">Coloca tu carnet&#10;de identidad (REVERSO)</token>
+    <token id="CaptureInfoBackIDCard">Coloca tu carnet&#10;de identidad (REVERSO)</token>
+    <token id="CaptureTipBackPassport">Pon el DORSO&#10;del pasaporte</token>
+    <token id="CaptureInfoBackPassport">Pon el DORSO&#10;del pasaporte</token>
+    <token id="CaptureTipBackDriversLicense">Pon el DORSO&#10;del carnet de conducir</token>
+    <token id="CaptureInfoBackDriversLicense">Pon el DORSO&#10;del carnet de conducir</token>
+    <token id="CaptureSuccessFront">¡El escaneado&#10;ha sido exitoso!</token>
+    <token id="CaptureSuccessBack">¡El escaneado&#10;ha sido exitoso!</token>
+    <token id="CaptureError">Analizando documento...</token>
+    <token id="CaptureErrorLight">No hay&#10;suficiente luz</token>
+    <token id="Tutorial1">Busca un fondo con&#10;buen contraste para la&#10;captura del documento</token>
+    <token id="Tutorial2">Controla que se vean bien&#10;las letras e imagen&#10;del documento</token>
+    <token id="Tutorial3">Evita contraluces sobre el&#10;documento para poder captar&#10;mejor la información</token>
+</translations>

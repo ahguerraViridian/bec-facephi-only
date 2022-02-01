@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<facephi-widget-conf version="1.2"
+    border_width="4.0"
+    border_color_tip="#ff3366"
+    background_color_tip="#ff33664c"
+    border_color_capture="#ffffff"
+    border_color_success="#ffffff"
+    background_color_success="#33ff924c"
+    border_color_error="#ffffff"
+    background_color_error="#ff763933"
+    >
+
+    <view id="CaptureIDFront">
+
+        <gradientBackground id="background"
+        colorStart="#1c113580"
+        colorEnd="#c0c0c080"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <panel id="IDPanel"
+        color="#ff33664c"
+        />
+
+        <frameID id="frame"
+        color="#ed1c24"
+        />
+
+        <labeledIcon id="tipCaptureFront"
+        icon="IDIconFront.png"
+        icon_align="LEFT"
+        separation="16.0"
+        text="CaptureTipFront"
+        text_color="#f9fafc"
+        text_align="LEFT"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        line_height="26.0"
+        />
+
+
+        <gradientPanel id="infoPanel"
+        colorStart="#ed1c24"
+        colorEnd="#ed1c24"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <labeledIcon id="infoCaptureFront"
+        icon="IDIconSMFront.png"
+        icon_align="LEFT"
+        separation="16.0"
+        text="CaptureInfoFront"
+        text_color="#f9fafc"
+        text_align="LEFT"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        line_height="22.0"
+        />
+
+        <!-- <buttonImage id="buttonInfo" value="info-light.png"/> -->
+        <buttonImage id="buttonExit" value="cross-light.png"/>
+
+        <image id="logo" value="logoSelphIDLight.png"/>
+    </view>
+
+
+    <view id="CaptureIDFrontSuccess">
+
+        <gradientBackground id="background"
+        colorStart="#1c113580"
+        colorEnd="#c0c0c080"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <documentImage id="lastDocumentImage"/>
+
+        <panel id="IDPanel"
+        color="#33ff924c"
+        />
+
+        <frameID id="frame"
+        color="#ffffff"
+        />
+
+        <labeledIcon id="successCaptureFront"
+        icon="checkIcon.png"
+        icon_align="LEFT"
+        separation="16.0"
+        text="CaptureSuccessFront"
+        text_color="#f9fafc"
+        text_align="LEFT"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        line_height="26.0"
+        />
+
+        <gradientPanel id="infoPanel"
+        colorStart="#ed1c24"
+        colorEnd="#dc508b"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <labeledIcon id="infoCaptureFront"
+        icon="IDIconSMFront.png"
+        icon_align="LEFT"
+        separation="16.0"
+        text="CaptureInfoFront"
+        text_color="#f9fafc"
+        text_align="LEFT"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        line_height="22.0"
+        />
+
+        <!-- <buttonImage id="buttonInfo" value="info-light.png"/> -->
+        <buttonImage id="buttonExit" value="cross-light.png"/>
+
+        <image id="logo" value="logoSelphIDLight.png"/>
+
+        <flash id="flash"
+        color="#ffffffcc"
+        delay="0.0"
+        duration="0.2"
+        />
+
+    </view>
+
+
+    <view id="CaptureIDFrontError">
+
+        <gradientBackground id="background"
+        colorStart="#1c113580"
+        colorEnd="#c0c0c080"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <flash id="flash"
+        color="#ff763933"
+        delay="0.1"
+        duration="0.3"
+        />
+
+        <panel id="IDPanel"
+        color="#ff76394c"
+        />
+
+        <frameID id="frame"
+        color="#ffffff"
+        />
+
+        <labeledIcon id="errorCaptureFront"
+        icon="errorIcon.png"
+        icon_align="LEFT"
+        separation="16.0"
+        text_color="#f9fafc"
+        text_align="LEFT"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        line_height="26.0"
+        />
+
+        <gradientPanel id="infoPanel"
+        colorStart="#ed1c24"
+        colorEnd="#dc508b"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <labeledIcon id="infoCaptureFront"
+        icon="IDIconSMFront.png"
+        icon_align="LEFT"
+        separation="16.0"
+        text="CaptureInfoFront"
+        text_color="#f9fafc"
+        text_align="LEFT"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        line_height="22.0"
+        />
+
+        <!-- <buttonImage id="buttonInfo" value="info-light.png"/> -->
+        <buttonImage id="buttonExit" value="cross-light.png"/>
+
+        <image id="logo" value="logoSelphIDLight.png"/>
+
+    </view>
+
+
+
+    <view id="CaptureOtherSideTransition">
+        
+        <gradientBackground id="background"
+        colorStart="#1c113580"
+        colorEnd="#c0c0c080"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <documentImage id="lastDocumentImage"/>
+
+        <frameID id="frame"
+        color="#ffffff"
+        />
+
+        <!-- <buttonImage id="buttonInfo" value="info-light.png"/> -->
+        <buttonImage id="buttonExit" value="cross-light.png"/>
+
+        <image id="logo" value="logoSelphIDLight.png"/>
+
+    </view>
+
+
+    <view id="CaptureIDBack">
+
+        <gradientBackground id="background"
+        colorStart="#1c113580"
+        colorEnd="#c0c0c080"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <panel id="IDPanel"
+        color="#ff33664c"
+        />
+
+        <frameID id="frame"
+        color="#ed1c24"
+        />
+
+        <labeledIcon id="tipCaptureBack"
+        icon="IDIconBack.png"
+        icon_align="LEFT"
+        separation="16.0"
+        text="CaptureTipBack"
+        text_color="#f9fafc"
+        text_align="LEFT"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        line_height="26.0"
+        />
+
+
+        <gradientPanel id="infoPanel"
+        colorStart="#ed1c24"
+        colorEnd="#ed1c24"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <labeledIcon id="infoCaptureBack"
+        icon="IDIconSMBack.png"
+        icon_align="LEFT"
+        separation="16.0"
+        text="CaptureInfoBack"
+        text_color="#f9fafc"
+        text_align="LEFT"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        line_height="22.0"
+        />
+
+        <!-- <buttonImage id="buttonInfo" value="info-light.png"/> -->
+        <buttonImage id="buttonExit" value="cross-light.png"/>
+
+        <image id="logo" value="logoSelphIDLight.png"/>
+
+    </view>
+
+    <view id="CaptureIDBackSuccess">
+
+        <gradientBackground id="background"
+        colorStart="#1c113580"
+        colorEnd="#c0c0c080"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <documentImage id="lastDocumentImage"/>
+
+        <panel id="IDPanel"
+        color="#33ff924c"
+        />
+
+        <frameID id="frame"
+        color="#ffffff"
+        />
+
+        <labeledIcon id="successCaptureBack"
+        icon="checkIcon.png"
+        icon_align="LEFT"
+        separation="16.0"
+        text="CaptureSuccessBack"
+        text_color="#f9fafc"
+        text_align="LEFT"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        line_height="26.0"
+        />
+
+        <gradientPanel id="infoPanel"
+        colorStart="#ed1c24"
+        colorEnd="#ed1c24"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <labeledIcon id="infoCaptureBack"
+        icon="IDIconSMBack.png"
+        icon_align="LEFT"
+        separation="16.0"
+        text="CaptureInfoBack"
+        text_color="#f9fafc"
+        text_align="LEFT"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        line_height="22.0"
+        />
+
+        <!-- <buttonImage id="buttonInfo" value="info-light.png"/> -->
+        <buttonImage id="buttonExit" value="cross-light.png"/>
+
+        <image id="logo" value="logoSelphIDLight.png"/>
+
+        <flash id="flash"
+        color="#ffffffcc"
+        delay="0.0"
+        duration="0.2"
+        />
+
+    </view>
+
+
+    <view id="CaptureIDBackError">
+
+        <gradientBackground id="background"
+        colorStart="#1c113580"
+        colorEnd="#c0c0c080"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <flash id="flash"
+        color="#ff763933"
+        delay="0.1"
+        duration="0.3"
+        />
+
+        <panel id="IDPanel"
+        color="#ff76394c"
+        />
+
+        <frameID id="frame"
+        color="#ffffff"
+        />
+
+        <labeledIcon id="errorCaptureBack"
+        icon="errorIcon.png"
+        icon_align="LEFT"
+        separation="16.0"
+        text_color="#f9fafc"
+        text_align="LEFT"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        line_height="26.0"
+        />
+
+        <gradientPanel id="infoPanel"
+        colorStart="#ed1c24"
+        colorEnd="#ed1c24"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <labeledIcon id="infoCaptureBack"
+        icon="IDIconSMBack.png"
+        icon_align="LEFT"
+        separation="16.0"
+        text="CaptureInfoBack"
+        text_color="#f9fafc"
+        text_align="LEFT"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        line_height="22.0"
+        />
+
+        <!-- <buttonImage id="buttonInfo" value="info-light.png"/> -->
+        <buttonImage id="buttonExit" value="cross-light.png"/>
+
+        <image id="logo" value="logoSelphIDLight.png"/>
+
+    </view>
+
+    <view id="ShowID">
+        <background id="background"
+        color="#ffffff"
+        />
+       
+        <documentImage id="lastDocumentImage"/>
+
+        <frameID id="frame"
+        color="#ed1c24"
+        />
+        
+        <button id="buttonRetry"
+        background="#a3a3a3"
+        foreground="#f9fafc"
+        content="button_repeat"
+        content_type="TEXT_ID"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        align="CENTER"
+        />
+        
+        <button id="buttonAccept"
+        background="#ed1c24"
+        foreground="#f9fafc"
+        content="button_finish"
+        content_type="TEXT_ID"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        align="CENTER"
+        />
+        
+        <!-- <buttonImage id="buttonInfo" value="info-dark.png"/> -->
+        <buttonImage id="buttonExit" value="cross-dark.png"/>
+        
+        <image id="logo" value="logoSelphIDDark.png"/>
+    </view>
+
+    <view id="InfoTutorial">
+
+        <background id="back"
+        color="#000000"
+        />
+
+        <gradientBackground id="background"
+        colorStart="#1c113580"
+        colorEnd="#c0c0c080"
+        xStart="0.333" yStart="0.200"
+        xEnd="0.750" yEnd="1.166"
+        />
+
+        <panel id="IDPanel"
+        color="#ff33664c"
+        />
+
+        <frameID id="frame"
+        color="#ed1c24"
+        />
+
+        <buttonImage id="buttonExit" value="cross-light.png"/>
+
+        <image id="logo" value="logoSelphIDLight.png"/>
+
+        <background id="infoBackground"
+        color="#00000066"
+        />
+        
+        <!-- <buttonImage id="buttonInfo" value="info-light.png"/> -->
+
+        <button id="buttonAccept"
+        background="#ed1c24"
+        foreground="#ed1c24"
+        content="button_finish"
+        content_type="TEXT_ID"
+        font="d-din-regular.ttf"
+        font_size="20.0"
+        align="CENTER"
+        />
+
+    </view>
+
+
+    <view id="Tutorial1">
+        <background id="background"
+        color="#5d3da0"
+        />
+
+        <video id="tip_video" value="01_tut_contraste.mp4"/>
+
+        <imageBackground id="imageBackground"
+        image="background.jpg"
+        scale="ASPECT_FILL"
+        circle_color="#ff336680"
+        />
+
+        <text id="tip"
+        color="#ffffff"
+        font="d-din-regular.ttf"
+        font_size="18.0"
+        />
+
+        <button id="buttonBack"
+        background="#00000000"
+        foreground="#ffffff"
+        content="button_skip"
+        content_type="TEXT_ID"
+        font="d-din-regular.ttf"
+        font_size="16.0"
+        align="LEFT"
+        />
+        
+        <button id="buttonNext"
+        background="#00000000"
+        foreground="#ffffff"
+        content="arrow-next-light.png"
+        content_type="RESOURCE_ID"
+        align="RIGHT"
+        />        
+
+        <pagination id="pagination" steps="3"
+        page="1"
+        image_on="paged-on-light.png"
+        image_off="paged-off-light.png"
+        separation="16.0"
+        />
+
+        <image id="logo" value="logoSelphIDLight.png"/>   
+    </view>
+
+    <view id="Tutorial2">
+        <background id="background"
+        color="#5d3da0"
+        />
+
+        <video id="tip_video" value="02_tut_legibilidad.mp4"/>
+        
+        <imageBackground id="imageBackground"
+        image="background.jpg"
+        scale="ASPECT_FILL"
+        circle_color="#ff336680"
+        />
+        
+        <text id="tip"
+        color="#ffffff"
+        font="d-din-regular.ttf"
+        font_size="18.0"
+        />
+
+        <button id="buttonBack"
+        background="#00000000"
+        foreground="#ffffff"
+        content="arrow-back-light.png"
+        content_type="RESOURCE_ID"
+        align="LEFT"
+        />
+        
+        <button id="buttonNext"
+        background="#00000000"
+        foreground="#ffffff"
+        content="arrow-next-light.png"
+        content_type="RESOURCE_ID"
+        align="RIGHT"
+        />        
+
+        <pagination id="pagination" steps="3"
+        page="2"
+        image_on="paged-on-light.png"
+        image_off="paged-off-light.png"
+        separation="16.0"
+        />
+
+        <image id="logo" value="logoSelphIDLight.png"/>   
+    </view>
+
+    <view id="Tutorial3">
+        <background id="background"
+        color="#5d3da0"
+        />
+
+        <video id="tip_video" value="03_tut_luz.mp4"/>
+        
+        <imageBackground id="imageBackground"
+        image="background.jpg"
+        scale="ASPECT_FILL"
+        circle_color="#ff336680"
+        />
+        
+        <text id="tip"
+        color="#ffffff"
+        font="d-din-regular.ttf"
+        font_size="18.0"
+        />
+
+        <button id="buttonBack"
+        background="#00000000"
+        foreground="#ffffff"
+        content="arrow-back-light.png"
+        content_type="RESOURCE_ID"
+        align="LEFT"
+        />
+        
+        <button id="buttonNext"
+        background="#00000000"
+        foreground="#ffffff"
+        content="button_ready"
+        content_type="TEXT_ID"
+        font="d-din-regular.ttf"
+        font_size="16.0"
+        align="RIGHT"
+        />      
+
+        <pagination id="pagination" steps="3"
+        page="3"
+        image_on="paged-on-light.png"
+        image_off="paged-off-light.png"
+        separation="16.0"
+        />
+
+        <image id="logo" value="logoSelphIDLight.png"/>   
+    </view>
+
+</facephi-widget-conf>
+

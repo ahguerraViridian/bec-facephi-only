@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selphid-widget-conf version="1.0">
+
+    <DocumentID id="NG" iso="NGA">
+        <Version id="DL" type="TD1">
+            <Front>
+                <FACE/>
+                <ML cols="4" split_by="lines" separation="0.04" space_separation="0.10">
+                    
+                    <findLineMatch id="0000_0" dst="mrzPresent" regex="(.*\&lt;\s?\&lt;.*)" value="($1)"/>
+                    <rejectIfValid id="0000_1" src="mrzPresent"/>
+
+                    <findLineContent id="10" dst="frn" content="FEDERAL@REPUBLIC@OF@NIGERIA" threshold="0.3"/>
+                    <findLineContent id="11" dst="ndl" content="NATIONAL@DRIVERS@LICENSE" threshold="0.3"/>                    
+                    <rejectIfNotValid id="18" src="frn"/>
+                    <rejectIfNotValid id="19" src="ndl"/>
+
+                    <findLineMatch id="20" src="docStr" dst="docNumber"
+                        regex="[LU][I/]?[NM][Oo] ?([0-9A-Z]{9,})$"
+                        value="($1)"
+                    />
+                    <rejectIfNotValid id="28" src="docNumber"/>
+                    <assignField id="29" src="docNumber" field="DocumentNumber"/>
+
+                    <findLineMatch id="30" src="DoBStr" dst="DoB"
+                        regex="([0-3][0-9])(?: |[^A-Za-z0-9])*([0-1][0-9])(?: |[^A-Za-z0-9])*([1-2][0-9]{3})$"
+                        value="($1)/($2)/($3)"
+                    />
+                    <rejectIfNotValid id="38" src="DoB"/>
+                    <assignField id="39" src="DoB" field="DateOfBirth"/>
+
+                    <!-- Assign the full name right after the date of birth -->
+                    <assignIfValid id="40" dst="fullN" src="DoBStr" offset="1" overwrite="false"/>
+                    <splitIfValid2 id="41" src="fullN" by=","
+                        dst1="ln"
+                        dst2="fn"
+                        overwrite="false"
+                    />
+                    <jumpIfNotValid id="42" src="fn" dst="no_decomposed_name"/>
+                        <assignField id="43" src="fn" field="FirstName"/>
+                        <assignField id="44" src="ln" field="LastName"/>
+                        <assignIfValid id="45" dst="fullN" src="fn"/>
+                        <concatenateIfValid id="46" dst="fullN" src="ln" prefix=" " sufix=""/>
+                    <label id="47" src="no_decomposed_name"/>
+                    <assignField id="49" src="fullN" field="FullName"/>
+
+                    <findLineContent id="50" dst="sexStr" content="SEX@@" threshold="1"/>
+                    <matchIfValid id="51" src="sexStr" dst="sex"
+                        regex="([M|F])"
+                        value="($1)"
+                    />
+                    <assignField id="59" src="sex" field="Gender"/>
+
+                    <findLineMatch id="60" dst="bt"
+                        regex="(A|B|8|0|O|o|AB|A8) ?(\+|\-)"
+                        value="([U]$1)($2)"
+                        overwrite="false"
+                    />
+                    <assignField id="69" src="bt" field="BloodType"/>
+
+                    <!-- We block the line of the first date of issue -->
+                    <findLineContent id="70" dst="firstIssuse" content="DATE@OF@1st@ISS@@@@@@@@@@@" threshold="0.3"/>
+                    <!-- We block the line of the N of K -->
+                    <findLineContent id="71" dst="nofk" content="N@of@K#" threshold="0.3"/>
+
+                    <findLineMatch id="77" src="DoIStr" dst="DoI"
+                        regex="([0-3][0-9])(?: |[^A-Za-z0-9])*([0-1][0-9])(?: |[^A-Za-z0-9])*([1-2][0-9]{3})$"
+                        value="($1)/($2)/($3)"
+                    />
+                    <rejectIfNotValid id="78" src="DoI"/>
+                    <assignField id="79" src="DoI" field="DateOfIssue"/>
+
+                    <findLineMatch id="80" src="DoEStr" dst="DoE"
+                        regex="([0-3][0-9])(?: |[^A-Za-z0-9])*([0-1][0-9])(?: |[^A-Za-z0-9])*([1-2][0-9]{3})$"
+                        value="($1)/($2)/($3)"
+                    />
+                    <rejectIfNotValid id="88" src="DoE"/>
+                    <assignField id="89" src="DoE" field="DateOfExpiry"/>
+
+                    <findLineContent id="90" dst="classStr" content="CLASS@@" threshold="2"/>
+                    <replaceIfValid id="91" dst="class" src="classStr" content="CLASS" replace="" threshold="2"/>
+                    <assignField id="99" src="class" field="VehicleClass"/>
+                
+                </ML>
+            </Front>
+            <Back>
+
+                <OCR>
+                    <region id="FullDocument" x="0.000" y="0.000" w="1.000" h="1.000"/>
+                </OCR>
+
+                <PDF417 optional="yes">
+                </PDF417>
+
+                <BARCODE optional="yes">
+                </BARCODE>
+
+                <ML cols="5" split_by="lines" separation="0.04" space_separation="0.10">
+
+                    <findLineMatch id="0000_0" dst="mrzPresent" regex="(.*\&lt;\s?\&lt;.*)" value="($1)"/>
+                    <rejectIfValid id="0000_1" src="mrzPresent"/>
+
+                    <findLineContent id="10" dst="classStr" content="CLASS@OF@LICENSE@#" threshold="0.3"/>
+                    <replaceIfValid id="11" dst="class" src="classStr" content="CLASS@OF@LICENSE@" replace="" threshold="0.3"/>
+                    <assignField id="19" src="class" field="VehicleClass"/>
+
+                    <findLineContent id="20" dst="endoStr" content="ENDORSEMENTS@#" threshold="0.3"/>
+                    <replaceIfValid id="21" dst="endo" src="endoStr" content="ENDORSEMENTS@" replace="" threshold="0.3"/>
+                    <assignField id="29" src="endo" field="Endorsements"/>
+
+                    <findLineContent id="30" dst="mark1" content="INDEX@@BG@Blood@group@@F@MARKS@Facial@marks@@REP@No@@of@replacements" threshold="0.3"/>
+                    <findLineContent id="31" dst="mark2" content="REN@No@@of@reneweale@@HT@Height@@GL@Glasses@@D@OF@B@Date@of@birth" threshold="0.3"/>
+                    <rejectIfNotValid id="38" src="mark1" src2="mark2"/>
+
+                </ML>
+
+            </Back>
+        </Version>
+    </DocumentID>
+
+
+<!--    
+    <DocumentID id="BR" iso="BRA">
+        <Version id="DL" type="TD1">
+            <Front>
+                <FACE/>
+                <ML cols="3" split_by="lines" separation="0.04" space_separation="0.10">
+                    
+                    <findLineMatch id="0000_0" dst="mrzPresent" regex="(.*\&lt;\s?\&lt;.*)" value="($1)"/>
+                    <rejectIfValid id="0000_1" src="mrzPresent"/>
+
+                    <findLineMatch id="10" src="registerNumberLine" dst="registerNumber"
+                        regex="([0-9oOl]{11})"
+                        value="([N]$1)"
+                    />
+                    <rejectIfNotValid id="18" src="registerNumber"/>
+                    <assignField id="19" src="registerNumber" field="RegisterNumber"/>
+
+                    <findLineMatch id="20" src="cpfLine" dst="cpf"
+                        regex="^([0-9oOl]{3})(?:,|\.)([0-9oOl]{3})(?:,|\.)([0-9oOl]{3})-([0-9oOl]{2})"
+                        value="([N]$1).([N]$2).([N]$3)-([N]$4)"
+                    />
+                    <rejectIfNotValid id="28" src="cpf"/>
+                    <assignField id="29" src="cpf" field="CPF"/>
+
+                    <findLineMatch id="30" dst="docNumber"
+                        regex="([0-9oOl]{8})([0-9a-zA-Z])([ 0-9a-zA-Z]{3,4}RJ)"
+                        value="([N]$1)($2)([U]$3)"
+                        overwrite="false"
+                    />
+                    <assignIfContent id="30_1" dst="issuerLocal" src="docNumber" value="RJ" op="exists" param="" param_2="" />
+                    <jumpIfValid id="30_2" src="issuerLocal" dst="jumpDocumentIssuer" />
+                    <findLineMatch id="31" dst="docNumber"
+                        regex="([0-9oOl]{8})(?:.+[sS8][sS8]P.*[sS8]P)"
+                        value="([N]$1)"
+                        overwrite="false"
+                    />
+                    <assignIfContent id="31_1" dst="issuerLocal" src="docNumber" value="SP" op="exists" param="" param_2="" />
+                    <jumpIfValid id="31_2" src="issuerLocal" dst="jumpDocumentIssuer" />
+                    <findLineMatch id="32" dst="docNumber"
+                        regex="([0-9oOl]{8})(?:.+[sS8]P)"
+                        value="([N]$1)"
+                        overwrite="false"
+                    />
+                    <assignIfContent id="32_1" dst="issuerLocal" src="docNumber" value="SP" op="exists" param="" param_2="" />
+                    <jumpIfValid id="32_2" src="issuerLocal" dst="jumpDocumentIssuer" />
+                    <findLineMatch id="33" dst="docNumber"
+                        regex="([0-9|o|O]{8})"
+                        value="([N]$1)"
+                        overwrite="false"
+                    />
+                    <label id="35" src="jumpDocumentIssuer" />
+                    <rejectIfNotValid id="36" src="docNumber"/>
+                    <assignField id="37" src="issuerLocal" field="IssuerLocal"/>
+                    <replaceIfValid id="38" dst="docNumber" content=" " replace=""/>
+                    <assignField id="39" src="docNumber" field="DocumentNumber"/>
+
+                    <matchIfValid2 id="40" src="registerNumberLine" dst="DoE" dst2="DoI1"
+                        regex="([0-9]{2})(?: |-|\.|\/|\|)+([0-9]{2})(?: |-|\.|\/|\|)+([1-2][0-9]{3})"
+                        value="($1)/($2)/($3)"
+                    />
+                    <findLineMatch2 id="41" dst="DoE" dst2="DoI1"
+                        regex="([0-9]{2})(?: |-|\.|\/|\|)+([0-9]{2})(?: |-|\.|\/|\|)+([1-2][0-9]{3})"
+                        value="($1)/($2)/($3)"
+                        overwrite="false"
+                    />
+                    <findLineMatch id="42" dst="DoI1"
+                        regex="([0-9]{2})(?: |-|\.|\/|\|)+([0-9]{2})(?: |-|\.|\/|\|)+([1-2][0-9]{3})"
+                        value="($1)/($2)/($3)"
+                        overwrite="false"
+                    />
+                    <assignField id="48" src="DoE" field="DateOfExpiry"/>
+                    <assignField id="49" src="DoI1" field="DateOfInitialIssue"/>
+
+                    <matchIfValid id="50" src="cpfLine" dst="DoB"
+                        regex="([0-9]{2})(?: |-|\.|\/|\|)+([0-9]{2})(?: |-|\.|\/|\|)+([1-2][0-9]{3})"
+                        value="($1)/($2)/($3)"
+                    />
+                    <assignField id="59" src="DoB" field="DateOfBirth"/>
+
+                    <findLineContent id="60" dst="dataName" content="NOME" threshold="0.3"/>
+                    <findLineContent id="61" dst="dataRegisterNumber" content="N@REGISTRO" threshold="0.3"/>
+                    <findLineContent id="62" dst="dataDocNumber" content="DOC@@IDENTIDADE@@@ORG@@EMISOR@@@UF" threshold="0.3"/>
+
+                    <assignIfValid id="70" dst="fn" src="dataName" offset="1" overwrite="false"/>
+                    <assignIfValid id="71" dst="fn" src="registerNumber" offset="-2" overwrite="false"/>
+                    <assignIfValid id="72" dst="fn" src="dataRegisterNumber" offset="-1" overwrite="false"/>
+                    <assignIfValid id="73" dst="fn" src="dataDocNumber" offset="-3" overwrite="false"/>
+                    <rejectIfNotValid id="77" src="fn"/>
+                    <modifyIfValid id="78" dst="fn" op="U"/>
+                    <assignField id="79" src="fn" field="FullName"/>
+                    <assignField id="80" src="fn" field="FirstName"/>
+                </ML>
+            </Front>
+            
+            <Back>
+                <OCR>
+                    <region id="FullDocument" x="0.000" y="0.000" w="1.000" h="1.000" />
+                </OCR>
+                <ML cols="2" split_by="lines" separation="0.04" space_separation="0.10">
+
+                    <findLineMatch id="0000_0" dst="mrzPresent" regex="(.*\&lt;\s?\&lt;.*)" value="($1)"/>
+                    <rejectIfValid id="0000_1" src="mrzPresent"/>
+                    
+                    <findLineContent id="0" dst="mark" content="VÁLIDA@EM@TODO@O@TERRITÓRIO@NACIONAL" threshold="0.3"/>
+                    <rejectIfValid id="9" src="mark"/>
+
+                    <findLineMatch id="10" dst="DoI"
+                        regex="([0-9]{2})(?:\/|\|)+([0-9]{2})(?:\/|\|)+([1-2l][0-9oOl]{3})"
+                        value="($1)/($2)/($3)"
+                    />
+                    <rejectIfNotValid id="18" src="DoI"/>
+                    <assignField id="19" src="DoI" field="DateOfIssue"/>
+
+                    <findLineContent id="20" dst="dataLocal" content="LOCAL" threshold="0.3"/>
+                    <findLineMatch id="21" dst="dataLocal"
+                        regex="([LJ][O0o][CE][A4][LJ])"
+                        value="($1)"
+                        overwrite="false"
+                    />
+                    <rejectIfNotValid id="29" src="dataLocal"/>
+
+                    <assignIfValid id="30" dst="local" src="dataLocal" offset="1" overwrite="false"/>
+                    <assignField id="31" src="local" field="Local"/>
+
+                    <assignIfValid id="40" dst="data1" src="DoI" offset="1" />
+                    <assignIfValid id="41" dst="data2" src="DoI" offset="2" />
+                    <assignField id="48" src="data1" field="Data1"/>
+                    <assignField id="49" src="data2" field="Data2"/>
+                </ML>
+            </Back>
+
+        </Version>
+    </DocumentID>
+-->
+
+    <Supported
+        Front="AL,AT,BY,BE,BA,BG,HR,CY,CZ,DK,EE,FI,FR,GE,DE,GR,HU,IS,IE,IT,XK,LV,LT,LU,MT,ME,NL,NO,PL,PT,RO,RU,RS,SK,SI,ES,SE,CH,GB,UA,DZ,EG,GH,IL,JO,KW,MA,MZ,NG,OM,QA,SA,ZA,TN,TR,AE,UG,AR,BS,BO,BR,CL,CO,CR,DO,EC,SV,GT,HT,HN,JM,PA,PY,PE,PR,TT,VE,BD,KH,ID,JP,MY,MM,PH,SG,KR,LK,TH,UZ,VN,AU,NZ,BM,CA,US"
+        Back= "NL,DZ,EG,KW,MA,NG,OM,AE,BR,CO,DO,SV,GT,HN,JM"
+
+        Exceptions="KR"
+        Exceptions-Front="KR"
+        Exceptions-Back="KR"
+
+    />
+	
+</selphid-widget-conf>

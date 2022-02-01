@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations>
+    <token id="button_repeat">TIRAR NOVAMENTE</token>
+    <token id="button_finish">ACEITAR</token>
+    <token id="button_skip">OMITIR</token>
+    <token id="button_ready">PRONTO</token>
+    <token id="CaptureTipFront">Coloque a FRENTE&#10;do documento</token>
+    <token id="CaptureInfoFront">Coloque a FRENTE&#10;do documento</token>
+    <token id="CaptureTipFrontIDCard">Coloque a FRENTE&#10;do documento</token>
+    <token id="CaptureInfoFrontIDCard">Coloque a FRENTE&#10;do documento</token>
+    <token id="CaptureTipFrontPassport">Coloque a FRENTE&#10;do passaporte</token>
+    <token id="CaptureInfoFrontPassport">Coloque a FRENTE&#10;do passaporte</token>
+    <token id="CaptureTipFrontDriversLicense">Coloque a FRENTE&#10;da carta de condução</token>
+    <token id="CaptureInfoFrontDriversLicense">Coloque a FRENTE&#10;da carta de condução</token>
+    <token id="CaptureTipBack">Coloque o VERSO&#10;do documento</token>
+    <token id="CaptureInfoBack">Coloque o VERSO&#10;do documento</token>
+    <token id="CaptureTipBackIDCard">Coloque o VERSO&#10;do documento</token>
+    <token id="CaptureInfoBackIDCard">Coloque o VERSO&#10;do documento</token>
+    <token id="CaptureTipBackPassport">Coloque o VERSO&#10;do passaporte</token>
+    <token id="CaptureInfoBackPassport">Coloque o VERSO&#10;do passaporte</token>
+    <token id="CaptureTipBackDriversLicense">Coloque o VERSO&#10;da carta de condução</token>
+    <token id="CaptureInfoBackDriversLicense">Coloque o VERSO&#10;da carta de condução</token>
+    <token id="CaptureSuccessFront">A digitalização&#10;foi realizada com êxito!</token>
+    <token id="CaptureSuccessBack">A digitalização&#10;foi realizada com êxito!</token>
+    <token id="CaptureError">A analisar documento...</token>
+    <token id="CaptureErrorLight">Não há&#10;luz suficiente</token>
+    <token id="Tutorial1">Procure um fundo com&#10;bom contraste para a&#10;captura do documento</token>
+    <token id="Tutorial2">Comprove que se vejam bem&#10;as letras e imagens&#10;do documento</token>
+    <token id="Tutorial3">Evite contraluzes sobre o&#10;documento para poder captar&#10;melhor a informação</token>
+</translations>

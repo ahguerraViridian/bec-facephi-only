@@ -1,0 +1,25 @@
+include ':app'
+include ':selphi_face_plugin', ':selphi_face_plugin', ':fphi-core-widget-android', ':fphi-selphi-widget-android'
+include ':selphid_plugin', ':fphiselphidwidgetcore', ':selphid', ':LibBlinkID'
+
+project(':selphid_plugin').projectDir = file('../../selphid_plugin/android')
+project(':fphiselphidwidgetcore').projectDir = file('../../selphid_plugin/android/fphiselphidwidgetcore')
+project(':selphid').projectDir = file('../../selphid_plugin/android/selphid')
+project(':LibBlinkID').projectDir = file('../../selphid_plugin/android/LibBlinkID')
+project(':selphi_face_plugin').projectDir = file('../../selphi_face_plugin/android')
+project(':fphi-core-widget-android').projectDir = file('../../selphi_face_plugin/android/fphi-core-widget-android')
+project(':fphi-selphi-widget-android').projectDir = file('../../selphi_face_plugin/android/fphi-selphi-widget-android')
+
+def flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
+
+def plugins = new Properties()
+def pluginsFile = new File(flutterProjectRoot.toFile(), '.flutter-plugins')
+if (pluginsFile.exists()) {
+    pluginsFile.withReader('UTF-8') { reader -> plugins.load(reader) }
+}
+
+plugins.each { name, path ->
+    def pluginDirectory = flutterProjectRoot.resolve(path).resolve('android').toFile()
+    include ":$name"
+    project(":$name").projectDir = pluginDirectory
+}
